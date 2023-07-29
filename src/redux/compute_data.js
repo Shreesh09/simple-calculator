@@ -1,4 +1,4 @@
-
+import {isOperator, isDigit} from "./add_data";
 function prec(c) {
     if(c === '/' || c === 'X')
         return 2;
@@ -14,7 +14,7 @@ function operation(a, b, op)
     {
         case '+': return a + b;
         case '-': return a - b;
-        case '*': return a * b;
+        case 'X': return a * b;
         case '/': return a / b;
         default: return -1;
     }
@@ -61,17 +61,33 @@ function compute(data) {
             st.push(ca);
         }
     }
-
+    if(st.length === 0)
+            return 0;
     return st[0];
 }
 
 const computeData = (data) => {
-    if(data.length === 0 )
+    if(data.length === 0)
             return 0;
+    while(isOperator(data[data.length-1]) && data.length > 0)
+        data = data.splice(data.length-1, 1);
 
-    if(prec(data[0]))
+    if(data.length === 0)
+        return 0;
+    while(isOperator(data[0])  && data.length > 0)
         data = data.splice(0, 1);
 
+    if(data.length === 0)
+        return 0;
+
+    let num;
+    if(data[data.length-1] === '.')
+        num = 0;
+    else num = parseFloat(data[data.length-1]);
+    data.pop();
+    data.push(num);
+
+    console.log(data);
     return compute(infixToPostfix(data));
 }
 
