@@ -67,15 +67,11 @@ function compute(data) {
 }
 
 const computeData = (data) => {
-    if(data.length === 0)
-            return 0;
-    while(isOperator(data[data.length-1]) && data.length > 0)
-        data = data.splice(data.length-1, 1);
+    while(isOperator(data.length > 0 && data[data.length-1]))
+        data = data.slice(0, data.length-2);
 
-    if(data.length === 0)
-        return 0;
-    while(isOperator(data[0])  && data.length > 0)
-        data = data.splice(0, 1);
+    while(data.length > 0 && isOperator(data[0]))
+        data = data.slice(1);
 
     if(data.length === 0)
         return 0;

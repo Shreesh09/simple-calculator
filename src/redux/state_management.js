@@ -20,7 +20,7 @@ const dataReducer = (state = defaultState, action) => {
             result: state.result,
         }
         case CALCULATE: return {
-            data: state.data,
+            data: [],
             result: computeData(state.data),
         }
         case CLEAR: return {
