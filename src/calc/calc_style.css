@@ -1,5 +1,13 @@
+@font-face {
+  font-family: "Seven-Segment";
+  src: local("Seven-Segment"), url(../fonts/Seven-Segment.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Jomhuria-Regular";
+  src: local("Jomhuria-Regular"), url(../fonts/Jomhuria-Regular.ttf) format("truetype");
+}
 .body {
-  font-family: Jomhuria, sans-serif;
+  font-family: "Jomhuria-Regular", sans-serif;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -47,7 +55,7 @@
 .calculator #screen p {
   color: rgba(0, 0, 0, 0.58);
   width: 85%;
-  font-family: "Seven Segment", ui-monospace;
+  font-family: "Seven-Segment", ui-monospace;
   height: 40%;
   margin: 0;
   font-size: 22px;
@@ -87,7 +95,7 @@
   justify-content: center;
 }
 .calculator .button-box div p {
-  font-family: Arial;
+  font-family: Arial, serif;
   font-weight: lighter;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.48);

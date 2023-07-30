@@ -4,8 +4,18 @@ $accent-color: rgb(156, 48, 48);
 $screen-color: rgba(137, 235, 77, .32);
 $button-color: #5C5D68;
 
+@font-face {
+  font-family: 'Seven-Segment';
+  src: local('Seven-Segment'), url(../fonts/Seven-Segment.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Jomhuria-Regular';
+  src: local('Jomhuria-Regular'), url(../fonts/Jomhuria-Regular.ttf) format('truetype');
+}
+
 .body {
-  font-family: Jomhuria, sans-serif;
+  font-family: 'Jomhuria-Regular', sans-serif;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -26,7 +36,6 @@ $button-color: #5C5D68;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  //justify-content: space-evenly;
 
   #name {
     margin-top: 1%;
@@ -34,11 +43,9 @@ $button-color: #5C5D68;
     font-size: 40px;
     width: 80%;
     text-align: left;
-    //border: 1px solid wheat;
   }
 
   #model {
-    //border: 1px solid white;
     margin-top: -15%;
     color: rgba($accent-color, .59);
     font-size: 30px;
@@ -52,9 +59,8 @@ $button-color: #5C5D68;
     box-shadow: inset 0 2px 4px 4px rgba(0,0,0,.25);
     p {
       color: rgba(0,0,0, .58);
-      //border: 1px solid white;
       width: 85%;
-      font-family: "Seven Segment", ui-monospace;
+      font-family: "Seven-Segment", ui-monospace;
       height: 40%;
       margin: 0;
       font-size: 22px;
@@ -99,13 +105,12 @@ $button-color: #5C5D68;
       align-items: center;
       justify-content: center;
       p {
-        font-family: Arial;
+        font-family: Arial, serif;
         font-weight: lighter;
         font-size: 18px;
         color: rgba(255,255,255,.48);
         text-align: center;
       }
-      //border: 1px solid white;
     }
     display: grid;
     gap: 9px;
