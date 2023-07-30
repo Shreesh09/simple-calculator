@@ -1,3 +1,3 @@
 # Simple Calculator
 
-### A Calculator that can do basic arithmatic bulit with React, Redux and SASS
+### A Calculator that can perform basic arithmatic operations, bulit with React, Redux and SASS
