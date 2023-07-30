@@ -1,10 +1,6 @@
 import React from "react";
 class CalculatorButtons extends React.Component
 {
-    constructor(props) {
-        super(props);
-    }
-
     handleClick = () => {
         this.props.click(this.props.id);
     }

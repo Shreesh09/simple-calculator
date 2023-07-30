@@ -2,25 +2,10 @@ import React from "react";
 import CalculatorButtons from './calculator_buttons';
 class Calculator extends React.Component
 {
-    constructor(props) {
-        super(props);
-        this.state = {
-            input: "",
-        }
-    }
-
     handleClick = (id) => {
-        if (this.props.data.length === 0)
-            this.setState({
-                input: "",
-            });
-
         if((id >= '0' && id <= '9') || id === '.')
         {
             this.props.submitDigit(id);
-            this.setState({
-                input: this.props.data.join("").replace(/[+][-]/, "-"),
-            });
         }
         else if( id === '=')
         {
@@ -28,17 +13,10 @@ class Calculator extends React.Component
         }
         else if(id === 'clear')
         {
-            this.setState({
-                input: "",
-            });
             this.props.submitReset();
-
         }
         else {
             this.props.submitOperator(id);
-            this.setState({
-                input: this.props.data.join("").replace(/[+][-]/, "-"),
-            });
         }
     }
 
@@ -46,7 +24,7 @@ class Calculator extends React.Component
         console.log(this.props.data);
         return (
             <div>
-                <h1>{this.state.input}</h1>
+                <h1>{this.props.display}</h1>
                 <h1>{this.props.result}</h1>
                 <div>
                 <CalculatorButtons click={this.handleClick} id="0"/>

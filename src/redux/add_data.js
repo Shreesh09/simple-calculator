@@ -3,7 +3,7 @@ function isDigit(d)
     if(typeof(d) === 'number')
         return true;
 
-    return d.split().every((c) => {
+    return d.split("").every((c) => {
         return (c >= '0' && c <= '9') || c === '.' || c === '-';
 
     });
@@ -15,12 +15,13 @@ function isOperator(c)
 
 }
 
-function addOperator(data, operator)
+function addOperator(data, display, operator)
 {
    if(data.length === 0)
    {
+       display = operator;
        data.push(operator);
-       return data;
+       return {display,data};
    }
    if(operator === '-')
    {
@@ -34,17 +35,24 @@ function addOperator(data, operator)
            data.push(num);
            data.push("+");
        }
-       if(data[data.length-1] !== '-')
-        data.push("-");
-       return data;
+       if(data[data.length-1] !== '-') {
+           display += "-";
+           data.push("-");
+       }
+       return {display,data};
    }
 
    if(isOperator(data[data.length-1]))
    {
-       if(data[data.length-1] === '-')
+       if(data[data.length-1] === '-') {
+           display = display.substring(0, display.length-1);
            data.pop();
+       }
+       if(isOperator(display[display.length-1]))
+            display = display.substring(0, display.length-1);
+       display += operator;
        data[data.length-1] = operator;
-       return data;
+       return {display,data};
    }
 
     let num;
@@ -52,33 +60,38 @@ function addOperator(data, operator)
         num = 0;
     else num = parseFloat(data[data.length-1]);
     data.pop();
-    data.push(num);
+    data.push(num)
+    display += operator;
     data.push(operator);
 
-    return data;
+    return {display,data};
 }
 
-function addDigit(data, digit)
+function addDigit(data, display, digit)
 {
     if(data.length === 0)
     {
+        display = digit;
         data.push(digit);
-        return data;
+        return {display,data};
     }
     if(!isDigit(data[data.length-1]))
     {
+        display += digit;
         data.push(digit);
-        return data;
+        return {display,data};
     }
 
     let d = data[data.length-1];
     if(d.length === 1 && d[0] === '0' && digit === '0')
-        return data;
+        return {display,data};
     if(digit === '.' && d.indexOf('.') !== -1)
-        return data;
+        return {display,data};
+
+    display += digit;
     data[data.length-1] += digit;
 
-    return data;
+    return {display,data};
 }
 
 export {addDigit, addOperator, isOperator, isDigit}

@@ -1,4 +1,4 @@
-import {isOperator, isDigit} from "./add_data";
+import {isOperator} from "./add_data";
 function prec(c) {
     if(c === '/' || c === 'X')
         return 2;
@@ -67,8 +67,8 @@ function compute(data) {
 }
 
 const computeData = (data) => {
-    while(isOperator(data.length > 0 && data[data.length-1]))
-        data = data.slice(0, data.length-2);
+    while(data.length > 0 && isOperator(data[data.length-1]))
+        data = data.slice(0, data.length-1);
 
     while(data.length > 0 && isOperator(data[0]))
         data = data.slice(1);
