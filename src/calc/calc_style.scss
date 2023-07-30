@@ -14,6 +14,11 @@ $button-color: #5C5D68;
   src: local('Jomhuria-Regular'), url(../fonts/Jomhuria-Regular.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Arial';
+  src: local('Arial'), url(../fonts/ARIAL.TTF) format('truetype');
+}
+
 .body {
   font-family: 'Jomhuria-Regular', sans-serif;
   width: 100%;
