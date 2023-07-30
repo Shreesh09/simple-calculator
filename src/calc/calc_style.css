@@ -1,0 +1,111 @@
+.body {
+  font-family: Jomhuria, sans-serif;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #44474F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  box-shadow: 6px 7px 6px 3px #22262D;
+  background-color: #2A303B;
+  width: 88%;
+  height: 62%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.calculator #name {
+  margin-top: 1%;
+  color: #5C5D68;
+  font-size: 40px;
+  width: 80%;
+  text-align: left;
+}
+.calculator #model {
+  margin-top: -15%;
+  color: rgba(156, 48, 48, 0.59);
+  font-size: 30px;
+  margin-bottom: 0;
+}
+.calculator #screen {
+  height: 16%;
+  width: 88%;
+  background-color: rgba(137, 235, 77, 0.32);
+  box-shadow: inset 0 2px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.calculator #screen p {
+  color: rgba(0, 0, 0, 0.58);
+  width: 85%;
+  font-family: "Seven Segment", ui-monospace;
+  height: 40%;
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+.calculator #screen #result {
+  padding-right: 10px;
+  font-size: 25px;
+  text-align: right;
+}
+.calculator .button-box {
+  margin-top: 25%;
+  width: 85%;
+  height: 40%;
+  display: grid;
+  gap: 9px;
+  grid-template-columns: 1fr 1fr 1fr 0.1fr 1fr 1fr;
+}
+.calculator .button-box .pseudo {
+  box-shadow: unset;
+  background-color: rgba(0, 0, 0, 0);
+}
+.calculator .button-box .clicked {
+  background-color: rgba(92, 93, 104, 0.4);
+  box-shadow: inset 1px 1px 2px 2px rgba(0, 0, 0, 0.4);
+}
+.calculator .button-box #clear {
+  background-color: rgb(156, 48, 48);
+}
+.calculator .button-box div {
+  box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.25);
+  background-color: #5C5D68;
+  height: 34px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calculator .button-box div p {
+  font-family: Arial;
+  font-weight: lighter;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.48);
+  text-align: center;
+}
+.calculator .button-box #zero {
+  grid-column: 2/4;
+}
+
+@media screen and (max-height: 650px) {
+  .calculator {
+    height: 90%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .calculator {
+    width: 23%;
+  }
+}
+
+/*# sourceMappingURL=calc_style.css.map */
