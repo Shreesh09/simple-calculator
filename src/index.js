@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import Calculator from "./calc/calc";
 
 import { Provider, connect } from 'react-redux';

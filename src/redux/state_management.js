@@ -14,7 +14,6 @@ const dataReducer = (state = defaultState, action) => {
     switch (action.type) {
         case APPEND_DIGIT:
             let st1 = addDigit(state.data, state.display, action.digit);
-            console.log(st1.display);
             return {
             data: st1.data,
             result: state.result,
@@ -23,7 +22,6 @@ const dataReducer = (state = defaultState, action) => {
 
         case APPEND_OPERATOR:
             let st = addOperator(state.data, state.display, action.operator);
-            console.log(st.display);
             return {
             data: st.data,
             result: state.result,
@@ -33,7 +31,7 @@ const dataReducer = (state = defaultState, action) => {
         case CALCULATE: return {
             data: [],
             result: computeData(state.data),
-            display: state.display + "=" + computeData(state.data),
+            display: state.display,
         };
 
         case CLEAR: return {

@@ -83,7 +83,6 @@ const computeData = (data) => {
     data.pop();
     data.push(num);
 
-    console.log(data);
     return compute(infixToPostfix(data));
 }
 

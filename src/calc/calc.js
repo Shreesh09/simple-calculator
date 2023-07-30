@@ -22,7 +22,6 @@ class Calculator extends React.Component
     }
 
     render() {
-        console.log(this.props.data);
         return (
             <div className="body">
                 <div className="calculator">
