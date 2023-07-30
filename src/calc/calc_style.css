@@ -95,7 +95,7 @@
   justify-content: center;
 }
 .calculator .button-box div p {
-  font-family: Arial, serif;
+  font-family: Arial, monospace;
   font-weight: lighter;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.48);
